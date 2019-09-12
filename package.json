@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/callum-marshall/PokeTips#readme",
   "dependencies": {
+    "pokedex-promise-v2": "^3.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
