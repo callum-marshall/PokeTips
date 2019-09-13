@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import ReactDOM from "react-dom"
-
 import Pokedex from 'pokedex-promise-v2'
 
 let P = new Pokedex()

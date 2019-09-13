@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom"
 
-export default class TextInput extends Component {
-  render() {
-    return (
-      <div className="field" />
-    )
-  }
-}
+const wrapper = document.getElementById("text-input")
+
+const jsxForm = (
+  <form>
+    <label>FORM
+      <input type="text"></input>
+    </label>
+    <input type="submit" value="Submit" />
+  </form>
+)
+
+ReactDOM.render(jsxForm, wrapper)
