@@ -18,6 +18,17 @@ img {
   height: auto;
 }
 
+/* Background Styling */
+
+.wrapper {
+  height: 100vh;
+  background-color: #3B4CCA;
+}
+
+/* Headings */
+
+/* Text Input Field */
+
 /* .field {
   width: 100%;
   height: 56px;
