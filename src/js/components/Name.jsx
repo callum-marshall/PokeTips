@@ -1,5 +1,4 @@
 import React from "react"
-import Pokedex from 'pokedex-promise-v2'
 
 // let P = new Pokedex()
 //
