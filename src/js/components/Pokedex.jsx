@@ -4,15 +4,15 @@ export class Pokedex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { name: '' }
+    this.state = { type: '' }
+    this.name = this.props.pokemonName
   }
 
   componentDidMount() {
-    fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+    fetch(`https://pokeapi.co/api/v2/pokemon/${this.name}`)
     .then(res => res.json())
     .then((data) => {
-      this.setState({ name: data['types']['0']['type']['name'] })
-      console.log(data.name)
+      this.setState({ type: data['types']['0']['type']['name'] })
     })
     .catch(console.log)
   }
@@ -20,7 +20,7 @@ export class Pokedex extends React.Component {
   render() {
     return (
       <div>
-        <p>{this.state.name}</p>
+        <p>{this.state.type}</p>
       </div>
     )
   }

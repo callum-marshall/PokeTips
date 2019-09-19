@@ -9,8 +9,7 @@ class App extends React.Component {
       <div className="wrapper">
         <h1>PokeTips</h1>
         <NameForm />
-        <PokemonName />
-        <Pokedex />
+        <Pokedex pokemonName={'steelix'}/>
       </div>
     )
   }
