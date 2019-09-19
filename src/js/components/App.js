@@ -5,7 +5,7 @@ import { PokemonName } from './Name.jsx'
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <h1>PokeTips</h1>
         <NameForm />
         <PokemonName />
