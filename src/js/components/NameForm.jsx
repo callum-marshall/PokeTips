@@ -6,15 +6,20 @@ export class NameForm extends React.Component {
     this.state = { value: '' };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
+  handleSubmit(event) {
+    alert("You searched for: " + this.state.value);
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Pokemon Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
