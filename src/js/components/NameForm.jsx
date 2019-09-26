@@ -14,10 +14,12 @@ export class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("You searched for: " + this.state.value);
+    // alert("You searched for: " + this.state.value);
+    this.props.nameFormCallback(this.state.value)
   }
 
   render() {
+    console.log('NAMEFORM RENDERED');
     return (
       <form onSubmit={this.handleSubmit}>
         <label>

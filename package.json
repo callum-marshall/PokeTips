@@ -4,7 +4,7 @@
   "description": "great tips",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --open --mode development --no--inline",
     "build": "webpack --mode production",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint ./src",
