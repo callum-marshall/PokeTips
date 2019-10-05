@@ -1,52 +1,29 @@
-import React from 'react'
+import React from 'react';
 
-export class Pokedex extends React.Component {
-
+class Pokedex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { type: '' }
-
-    this.updatePokeType = this.updatePokeType.bind(this)
+    this.state = { type: '' };
   }
 
-  componentDidMount() {
-    console.log("apple");
-    console.log(this.props.pokemonName);
-    console.log("apple");
-  }
-
-  componentDidUpdate() {
-    console.log("banana");
-    console.log(this.props.pokemonName);
-    console.log("banana");
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextProps.pokemonName !== this.props.pokemonName || nextState.type !== this.state.type) {
-        return true
-      } else {
-        return false
-      }
-  }
-
-  updatePokeType() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}`)
-    .then(res => res.json())
-    .then((data) => {
-      console.log({pokedex1: this.props.pokemonName});
-      this.setState({ type: data['types']['0']['type']['name'] })
-    })
-    .catch(console.log("ERROR"))
-  }
+  getPokeName = async () => {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}`
+    )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ type: data['types']['0']['type']['name'] });
+      });
+  };
 
   render() {
-    // this.updatePokeType()
-    console.log('POKEDEX RENDERED');
-    if (this.state.type === '') { this.updatePokeType() }
+    this.getPokeName();
     return (
       <div>
         <p>{this.state.type}</p>
       </div>
-    )
+    );
   }
 }
+
+export default Pokedex;
